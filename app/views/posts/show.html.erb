@@ -1,0 +1,13 @@
+<h1> <%= @post.title %> </h1> <br>
+<br> content : <%= @post.content%> --
+<br>
+<%= link_to "back to list of posts", posts_path, class: "btn btn-primary" %>
+
+<p><strong>Comments</strong></p>
+<p><%= link_to "Add your own comment",   new_post_comment_path(@post) %></p>
+<ul class="list-group">
+  <% @post.comments.each do |comment| %>
+    <li class="list-group-item"><%= comment.content %> </li>
+  <% end %>
+</ul>
+<br>
